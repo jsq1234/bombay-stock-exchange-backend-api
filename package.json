@@ -6,12 +6,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "download" : "node ./scripts/download_equities.js"
+    "download": "node ./scripts/download_equities.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "adm-zip": "^0.5.10",
+    "csv-parser": "^3.0.0",
     "dotenv": "^16.3.2",
     "express": "^4.18.2",
     "postgres": "^3.4.3"

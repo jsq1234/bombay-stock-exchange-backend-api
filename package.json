@@ -4,9 +4,16 @@
   "description": "BSE stock exchange backend API",
   "type": "module",
   "main": "index.js",
+  "paths": {
+    "@/*": [
+      "*"
+    ]
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "download": "node ./scripts/download_equities.js"
+    "download": "node ./scripts/download.js",
+    "seed": "node ./scripts/seed.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -14,8 +21,13 @@
   "dependencies": {
     "adm-zip": "^0.5.10",
     "csv-parser": "^3.0.0",
-    "dotenv": "^16.3.2",
+    "dotenv": "^16.4.0",
     "express": "^4.18.2",
-    "postgres": "^3.4.3"
+    "memory-cache": "^0.2.0",
+    "postgres": "^3.4.3",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
   }
 }

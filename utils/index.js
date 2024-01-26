@@ -72,3 +72,10 @@ export function convertStockRecords(row) {
     net_turnov: parseFloat(row.net_turnov),
   };
 }
+
+export async function executeQuery(callback) {
+  const profiler = dbLog.startTimer();
+  const db_results = await callback();
+  profiler.done({ message: db_results.command });
+  return db_results;
+}

@@ -1,4 +1,5 @@
 import { serverLog } from "../config/loggerConfig.js";
+import { serverCache } from "../middleware/cache.middleware.js";
 import {
   getAllStocksHistory,
   getStockHistory,
@@ -9,7 +10,6 @@ import {
 export async function getStockController(req, res) {
   try {
     const { stock_name } = req.params;
-
     const results = await getStocksByName(stock_name);
 
     if (results.length === 0) {

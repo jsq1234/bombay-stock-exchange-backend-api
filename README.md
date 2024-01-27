@@ -21,9 +21,6 @@ How to run:
     npm start
 ```
 
-## SQL schema 
-
-
 ## API Usage
 
 ### /stocks (get all stocks from the database)

@@ -15,12 +15,11 @@ export async function addStocksToFavouriteController(req, res) {
       });
     }
     const result = await addStockToFavourites(stock_name);
-    console.log(result);
 
     if (result.length === 0) {
       return res
         .status(404)
-        .json({ error: `${stock_name} doesn't exist in db.` });
+        .json({ error: `${stock_name} doesn't exist in stock_info` });
     }
 
     return res.json({

@@ -85,7 +85,7 @@ async function insertValuesIntoStockExchange(data) {
   });
 }
 
-async function seed() {
+export async function seed() {
   await createStockInfoTable();
   await createStockExchangeTable();
   await createFavouritesTable();

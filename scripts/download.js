@@ -5,7 +5,9 @@ import { createWriteStream } from "fs";
 import { getFileName } from "../utils";
 import * as path from "path";
 
-export async function downloadEquities() {
+export async function downloadEquities(d = undefined) {
+  if (!d) {
+  }
   const args = process.argv;
   try {
     if (args.length <= 2) {
@@ -82,4 +84,6 @@ export async function downloadEquity(date) {
   console.log(`File downloaded: ${destination}`);
 }
 
-downloadEquities();
+if (require.main === module) {
+  downloadEquities();
+}

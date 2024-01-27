@@ -1,3 +1,5 @@
+import { dbLog } from "../config/loggerConfig.js";
+
 export function preprocessRow(data, date) {
   const {
     SC_NAME,
@@ -60,6 +62,7 @@ export async function trackExecutionTime(callback) {
 export function convertStockRecords(row) {
   return {
     ...row,
+    sc_id: parseInt(row.sc_id),
     sc_code: parseInt(row.sc_code),
     high: parseFloat(row.high),
     low: parseFloat(row.low),

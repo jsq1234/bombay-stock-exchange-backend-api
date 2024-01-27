@@ -3,8 +3,7 @@ import csvParser from "csv-parser";
 import { Writable, PassThrough } from "stream";
 import { pipeline } from "stream/promises";
 import { getDate, preprocessRow } from "../utils/index.js";
-import { readdir, mkdir } from "fs/promises";
-import { existsSync } from "fs";
+import { readdir } from "fs/promises";
 
 export async function extractFile(filename) {
   const zip = new AdmZip(`./Equities/${filename}_CSV.ZIP`);

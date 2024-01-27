@@ -11,7 +11,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "node index.js",
+    "start": "node index.js",
     "download": "node ./scripts/download.js",
     "seed": "node ./scripts/seed.js",
     "dev": "nodemon index.js"
@@ -25,6 +25,7 @@
     "dotenv": "^16.4.0",
     "express": "^4.18.2",
     "memory-cache": "^0.2.0",
+    "pg-promise": "^11.5.4",
     "postgres": "^3.4.3",
     "winston": "^3.11.0"
   },

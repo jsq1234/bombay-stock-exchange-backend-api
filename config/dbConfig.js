@@ -4,14 +4,16 @@ import { dbLog, serverLog } from "./loggerConfig.js";
 
 config();
 
+const { DATABASE_URL } = process.env;
+
 const connectionString =
-  process.env.DATABASE_URL || "postgresql://manan@localhost:5432/sample_db_v2";
+  DATABASE_URL || "postgresql://manan@localhost:5432/sample_db_v2";
 
 serverLog.info("Connecting to postgres database...");
 
 const sql = postgres(
   connectionString,
-  process.env.DATABASE_URL
+  DATABASE_URL
     ? {
         ssl: "require",
         onnotice: (notice) => {

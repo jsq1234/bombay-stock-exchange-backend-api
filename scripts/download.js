@@ -2,7 +2,7 @@ import fs from "fs/promises";
 import { Readable } from "stream";
 import { finished } from "stream/promises";
 import { createWriteStream } from "fs";
-import { getFileName } from "../utils";
+import { getFileName } from "../utils/index.js";
 import * as path from "path";
 
 export async function downloadEquities(d = undefined) {
@@ -84,6 +84,6 @@ export async function downloadEquity(date) {
   console.log(`File downloaded: ${destination}`);
 }
 
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   downloadEquities();
 }

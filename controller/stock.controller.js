@@ -1,5 +1,4 @@
 import { serverLog } from "../config/loggerConfig.js";
-import { serverCache } from "../middleware/cache.middleware.js";
 import {
   getAllStocksHistory,
   getStockHistory,

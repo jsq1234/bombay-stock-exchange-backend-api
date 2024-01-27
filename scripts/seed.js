@@ -102,16 +102,19 @@ export async function seed() {
 
   profiler.done({ message: `Inserted all documents in database` });
 }
-(async () => {
-  try {
-    await seed();
-  } catch (e) {
-    if (e.name === "PostgresError") {
-      dbLog.error(e);
-    } else {
-      serverLog.error(e);
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  (async () => {
+    try {
+      await seed();
+    } catch (e) {
+      if (e.name === "PostgresError") {
+        dbLog.error(e);
+      } else {
+        serverLog.error(e);
+      }
+    } finally {
+      await sql.end();
     }
-  } finally {
-    await sql.end();
-  }
-})();
+  })();
+}
